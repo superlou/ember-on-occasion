@@ -83,13 +83,15 @@
                 <h1 id="components">Components</h1>
 <p>All components, regardless of being "template-only" or "class-based" are created in <code>app/components</code>.</p>
 <h2 id="template-only-components">Template-only components</h2>
-<p>Template-only components use the <code>.hbs</code> extension and do not wrap the contents in a <code>&lt;template&gt;</code> tag.</p>
-<pre><code class="language-html">&lt;!-- banner-hero.hbs --&gt;
-&lt;div class=&quot;banner-hero&quot;&gt;
-    &lt;img src={{@image}}&gt;
-&lt;/div&gt;
+<p>Template-only components use the <code>.gjs</code> extension and wrap the contents in a <code>&lt;template&gt;</code> tag. They are the recommended way to create components, even without component logic. </p>
+<pre><code class="language-html">&lt;!-- banner-hero.gjs --&gt;
+&lt;template&gt;
+    &lt;div class=&quot;banner-hero&quot;&gt;
+        &lt;img src={{@image}}&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
 </code></pre>
-<p>There is nothing wrong with template-only components.</p>
+<p>There is nothing wrong with template-only components. Nobody should use <code>.hbs</code> files (without a <code>&lt;template&gt;</code> tag) anymore.</p>
 <h2 id="class-based-components">Class-based components</h2>
 <p>These components use the <code>.gjs</code> extension and combine logic with the template. The template must be inside a <code>&lt;template&gt;</code> tag.</p>
 <pre><code class="language-js">// banner-hero.gjs
