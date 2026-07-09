@@ -2,7 +2,7 @@
 
 ## Conditionals
 
-```js
+```hbs
 {{#if this.someThing}}
   Shown if someThing is true.
 {{else if this.anotherThing}}
@@ -21,7 +21,7 @@
 ## Looping
 Iterate over a list:
 
-```js
+```hbs
 <ul>
   {{#each-in this.records as |record|}}
     <li>{{record}}</li>
@@ -33,7 +33,7 @@ Iterate over a list:
 
 Iterate over a dictionary:
 
-```js
+```hbs
 <ul>
   {{#each-in this.dict as |key value|}}
     <li>{{key}} - {{value}}</li>

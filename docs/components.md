@@ -1,13 +1,16 @@
 # Components
 
-All components, regardless of being "template-only" or "class-based" are created in `app/components`.
+Components are created in:
+
+* `app/components`: reusable components, regardless of being "template-only" or "class based"
+* `app/templates`: routable components
 
 ## Template-only components
 
 Template-only components use the `.gjs` extension and wrap the contents in a `<template>` tag. They are the recommended way to create components, even without component logic. 
 
-```html
-<!-- banner-hero.gjs -->
+```js
+// banner-hero.gjs
 <template>
     <div class="banner-hero">
         <img src={{@image}}>
