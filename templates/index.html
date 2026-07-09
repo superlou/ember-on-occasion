@@ -82,7 +82,7 @@
               
                 <h1 id="templates">Templates</h1>
 <h2 id="conditionals">Conditionals</h2>
-<pre><code class="language-js">{{#if this.someThing}}
+<pre><code class="language-hbs">{{#if this.someThing}}
   Shown if someThing is true.
 {{else if this.anotherThing}}
   anotherThing is true.
@@ -98,7 +98,7 @@
 </code></pre>
 <h2 id="looping">Looping</h2>
 <p>Iterate over a list:</p>
-<pre><code class="language-js">&lt;ul&gt;
+<pre><code class="language-hbs">&lt;ul&gt;
   {{#each-in this.records as |record|}}
     &lt;li&gt;{{record}}&lt;/li&gt;
   {{else}}
@@ -107,7 +107,7 @@
 &lt;/ul&gt;
 </code></pre>
 <p>Iterate over a dictionary:</p>
-<pre><code class="language-js">&lt;ul&gt;
+<pre><code class="language-hbs">&lt;ul&gt;
   {{#each-in this.dict as |key value|}}
     &lt;li&gt;{{key}} - {{value}}&lt;/li&gt;
   {{/each}}
