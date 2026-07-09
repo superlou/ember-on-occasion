@@ -4,17 +4,18 @@ All components, regardless of being "template-only" or "class-based" are created
 
 ## Template-only components
 
-Template-only components use the `.hbs` extension and do not wrap the contents in a `<template>` tag.
+Template-only components use the `.gjs` extension and wrap the contents in a `<template>` tag. They are the recommended way to create components, even without component logic. 
 
 ```html
-<!-- banner-hero.hbs -->
-<div class="banner-hero">
-    <img src={{@image}}>
-</div>
+<!-- banner-hero.gjs -->
+<template>
+    <div class="banner-hero">
+        <img src={{@image}}>
+    </div>
+</template>
 ```
 
-There is nothing wrong with template-only components.
-
+There is nothing wrong with template-only components. Nobody should use `.hbs` files (without a `<template>` tag) anymore.
 
 ## Class-based components
 
