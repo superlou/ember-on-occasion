@@ -81,15 +81,14 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="components">Components</h1>
-<p>All reusable components, regardless of being "template-only" or "class-based" are created in <code>app/components</code>. Route components go in `app/</p>
-<p>Components are creatd in:</p>
+<p>Components are created in:</p>
 <ul>
 <li><code>app/components</code>: reusable components, regardless of being "template-only" or "class based"</li>
 <li><code>app/templates</code>: routable components</li>
 </ul>
 <h2 id="template-only-components">Template-only components</h2>
 <p>Template-only components use the <code>.gjs</code> extension and wrap the contents in a <code>&lt;template&gt;</code> tag. They are the recommended way to create components, even without component logic. </p>
-<pre><code class="language-html">&lt;!-- banner-hero.gjs --&gt;
+<pre><code class="language-js">// banner-hero.gjs
 &lt;template&gt;
     &lt;div class=&quot;banner-hero&quot;&gt;
         &lt;img src={{@image}}&gt;
