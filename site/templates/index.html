@@ -50,6 +50,14 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Templates</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#html">HTML</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#expressions">Expressions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#escaping">Escaping</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#conditionals">Conditionals</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#looping">Looping</a>
@@ -81,6 +89,45 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="templates">Templates</h1>
+<p>Ember's templating language is a descendent of <a href="https://handlebarsjs.com/">Handlebars</a>.</p>
+<p>Ember templates are most often found in files with the extension <code>.gjs</code> or <code>gts</code> (depending on whether you are using TypeScript or not) inside of <code>&lt;template&gt;&lt;/template&gt;</code>. This may be referred to as template tag or strict mode. There are other ways to use templates but we will not concern ourselves with those, for now.</p>
+<h2 id="html">HTML</h2>
+<p>Templates are written in a component with HTML within the <code>&lt;template&gt;</code> tag.</p>
+<pre><code class="language-html">&lt;template&gt;
+  &lt;article&gt;
+    &lt;h1&gt;My title&lt;/h1&gt;
+    &lt;!-- html comments stay where you put them --&gt;
+    &lt;p&gt;This is an article about...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/template&gt;
+</code></pre>
+<h2 id="expressions">Expressions</h2>
+<pre><code class="language-hbs">const name = 'Phil';
+
+&lt;template&gt;
+  &lt;h1&gt;Hi {{name}}&lt;/h1&gt;
+&lt;/template&gt;
+</code></pre>
+<pre><code class="language-hbs">const Person = { firstName: 'Phil', lastName: 'Gengler' };
+
+&lt;template&gt;
+  &lt;h1&gt;Hi {{Person.firstName}} {{Person.lastName}}&lt;/h1&gt;
+&lt;/template&gt;
+</code></pre>
+<h2 id="comments">Comments</h2>
+<pre><code class="language-hbs">&lt;template&gt;
+  {{! This is a comment }}
+  {{!-- This is a comment that allows must}}ches --}}
+&lt;/template&gt;
+</code></pre>
+<h2 id="escaping">Escaping</h2>
+<pre><code class="language-hbs">const specialChars = &quot;&amp; &lt; &gt; \&quot; ' ` =&quot;;
+
+&lt;template&gt;
+  {{specialChars}} {{! outputs &amp;amp; &amp;lt; &amp;gt; &amp;quot; &amp;#x27; &amp;#x60; &amp;#x3D; }}
+  {{{specialChars}}} {{! outputs &amp; &lt; &gt; &quot; ' ` = }}
+&lt;/template&gt;
+</code></pre>
 <h2 id="conditionals">Conditionals</h2>
 <pre><code class="language-hbs">{{#if this.someThing}}
   Shown if someThing is true.
